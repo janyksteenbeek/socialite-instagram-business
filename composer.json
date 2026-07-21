@@ -16,9 +16,11 @@
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^8.3",
         "ext-json": "*",
-        "socialiteproviders/manager": "^4.6"
+        "socialiteproviders/manager": "^4.9",
+        "illuminate/support": "^13.0",
+        "laravel/socialite": "^5.5"
     },
     "autoload": {
         "psr-4": {
