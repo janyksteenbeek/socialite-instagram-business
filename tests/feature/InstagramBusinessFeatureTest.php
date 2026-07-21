@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\\Feature\\Providers\\Instagram;
+namespace Tests\Feature\Providers\Instagram;
 
-use Illuminate\\Foundation\\Testing\\TestCase;
-use Illuminate\\Http\\Request;
-use JanykSteenbeek\\SocialiteInstagramBusiness\\Two\\InstagramBusinessProvider;
+use Illuminate\Foundation\Testing\TestCase;
+use Illuminate\Http\Request;
+use JanykSteenbeek\SocialiteInstagramBusiness\Two\InstagramBusinessProvider;
 
 class InstagramBusinessProviderFeatureTest extends TestCase
 {

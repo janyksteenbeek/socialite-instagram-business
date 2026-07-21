@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\\Unit\\Providers;
+namespace Tests\Unit\Providers;
 
-use Illuminate\\Foundation\\Testing\\TestCase;
-use JanykSteenbeek\\SocialiteInstagramBusiness\\Two\\InstagramBusinessProvider;
+use Illuminate\Foundation\Testing\TestCase;
+use JanykSteenbeek\SocialiteInstagramBusiness\Two\InstagramBusinessProvider;
 
 class InstagramBusinessProviderTest extends TestCase
 {

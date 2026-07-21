@@ -1,12 +1,12 @@
 <?php
 
-namespace Tests\\Integration\\Providers\\Instagram;
+namespace Tests\Integration\Providers\Instagram;
 
-use Illuminate\\Foundation\\Testing\\TestCase;
-use Illuminate\\Support\\Facades\\Event;
-use JanykSteenbeek\\SocialiteInstagramBusiness\\Listeners\\InstagramBusinessExtendSocialite;
-use JanykSteenbeek\\SocialiteInstagramBusiness\\Two\\InstagramBusinessProvider;
-use SocialiteProviders\\Manager\\SocialiteWasCalled;
+use Illuminate\Foundation\Testing\TestCase;
+use Illuminate\Support\Facades\Event;
+use JanykSteenbeek\SocialiteInstagramBusiness\Listeners\InstagramBusinessExtendSocialite;
+use JanykSteenbeek\SocialiteInstagramBusiness\Two\InstagramBusinessProvider;
+use SocialiteProviders\Manager\SocialiteWasCalled;
 
 class InstagramBusinessIntegrationTest extends TestCase
 {

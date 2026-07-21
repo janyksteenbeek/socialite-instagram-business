@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\\Feature\\Providers\\Instagram\\Authentication;
+namespace Tests\Feature\Providers\Instagram\Authentication;
 
-use Illuminate\\Foundation\\Testing\\TestCase;
-use JanykSteenbeek\\SocialiteInstagramBusiness\\Two\\InstagramBusinessProvider;
+use Illuminate\Foundation\Testing\TestCase;
+use JanykSteenbeek\SocialiteInstagramBusiness\Two\InstagramBusinessProvider;
 
 class InstagramBusinessAuthenticationTest extends TestCase
 {
