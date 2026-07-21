@@ -22,6 +22,46 @@ Please see the [Base Installation Guide](https://socialiteproviders.com/usage/),
 
 ### Add provider event listener
 
+#### Laravel 13+
+
+In Laravel 13, event discovery allows you to create event listeners without manual registration. In your `Listeners` directory, create a listener that extends `SocialiteWasCalled` events, and Laravel will automatically detect and use it.
+
+* Note: You do not need to add anything for the built-in socialite providers unless you override them with your own providers.
+
+```php
+namespace JanykSteenbeek\\SocialiteInstagramBusiness\\Listeners;
+
+use SocialiteProviders\\Manager\\SocialiteWasCalled;
+use JanykSteenbeek\\SocialiteInstagramBusiness\\Two\\InstagramBusinessProvider;
+
+class InstagramBusinessExtendSocialite
+{
+    public function handle(SocialiteWasCalled $socialiteWasCalled): void
+    {
+        $socialiteWasCalled->extendSocialite('instagram-business', InstagramBusinessProvider::class);
+    }
+}
+```
+
+#### Laravel 12+
+
+In Laravel 12, event discovery was introduced. Create a listener in your `Listeners` directory and Laravel will automatically discover it.
+
+```php
+namespace JanykSteenbeek\\SocialiteInstagramBusiness\\Listeners;
+
+use SocialiteProviders\\Manager\\SocialiteWasCalled;
+use JanykSteenbeek\\SocialiteInstagramBusiness\\Two\\InstagramBusinessProvider;
+
+class InstagramBusinessExtendSocialite
+{
+    public function handle(SocialiteWasCalled $socialiteWasCalled): void
+    {
+        $socialiteWasCalled->extendSocialite('instagram-business', InstagramBusinessProvider::class);
+    }
+}
+```
+
 #### Laravel 11+
 
 In Laravel 11, the default `EventServiceProvider` provider was removed. Instead, add the listener using the `listen` method on the `Event` facade, in your `AppServiceProvider` `boot` method.
@@ -29,8 +69,8 @@ In Laravel 11, the default `EventServiceProvider` provider was removed. Instead,
 * Note: You do not need to add anything for the built-in socialite providers unless you override them with your own providers.
 
 ```php
-Event::listen(function (\SocialiteProviders\Manager\SocialiteWasCalled $event) {
-    $event->extendSocialite('instagram-business', \JanykSteenbeek\SocialiteInstagramBusiness\Two\InstagramBusinessProvider::class);
+Event::listen(function (\\SocialiteProviders\\Manager\\SocialiteWasCalled $event) {
+    $event->extendSocialite('instagram-business', \\JanykSteenbeek\\SocialiteInstagramBusiness\\Two\\InstagramBusinessProvider::class);
 });
 ```
 <details>
@@ -43,9 +83,9 @@ Add the event to your `listen[]` array in `app/Providers/EventServiceProvider`. 
 
 ```php
 protected $listen = [
-    \SocialiteProviders\Manager\SocialiteWasCalled::class => [
+    \\SocialiteProviders\\Manager\\SocialiteWasCalled::class => [
         // ... other providers
-        \JanykSteenbeek\SocialiteInstagramBusiness\Listeners\InstagramExtendSocialite::class.'@handle',
+        \\JanykSteenbeek\\SocialiteInstagramBusiness\\Listeners\\InstagramBusinessExtendSocialite::class.'@handle',
     ],
 ];
 ```

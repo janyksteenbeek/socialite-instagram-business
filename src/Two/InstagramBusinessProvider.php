@@ -16,26 +16,26 @@ class InstagramBusinessProvider extends AbstractProvider
     /**
      * {@inheritdoc}
      */
-    protected $scopeSeparator = ' ';
+    public $scopeSeparator = ' ';
 
     /**
      * The user fields being requested.
      *
      * @var array
      */
-    protected $fields = ['account_type', 'id', 'user_id', 'username', 'name',
+    public $fields = ['account_type', 'id', 'user_id', 'username', 'name',
         'account_type', 'profile_picture_url', 'followers_count',
         'follows_count', 'media_count'];
 
     /**
      * {@inheritdoc}
      */
-    protected $scopes = ['instagram_business_basic'];
+    public $scopes = ['instagram_business_basic'];
 
     /**
      * {@inheritdoc}
      */
-    protected function getAuthUrl($state)
+    public function getAuthUrl($state)
     {
         return $this->buildAuthUrlFromBase(
             'https://www.instagram.com/oauth/authorize',
@@ -46,7 +46,7 @@ class InstagramBusinessProvider extends AbstractProvider
     /**
      * {@inheritdoc}
      */
-    protected function getTokenUrl()
+    public function getTokenUrl()
     {
         return 'https://api.instagram.com/oauth/access_token';
     }
@@ -78,7 +78,7 @@ class InstagramBusinessProvider extends AbstractProvider
     /**
      * {@inheritdoc}
      */
-    protected function mapUserToObject(array $user)
+    public function mapUserToObject(array $user)
     {
         return (new User)->setRaw($user)->map([
             'id' => $user['user_id'],
